@@ -1,3 +1,9 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # =========================================
 # BOT MODE
 # =========================================
@@ -21,25 +27,35 @@ PAPER_BALANCE = 1000
 # DELTA API
 # =========================
 
-API_KEY = "DwYyGZLGEj4ZWUtY8yPblfuW7NIncf"
+API_KEY = os.getenv(
+    'API_KEY'
+)
 
-API_SECRET = "WQVKtOtjqn0fKS6awtVfrYeWZmq7szA91Nua7dQqAzzIe79yyKYfZmWK40Su"
+API_SECRET = os.getenv(
+    'API_SECRET'
+)
 
 
 # =========================
 # TELEGRAM
 # =========================
 
-BOT_TOKEN = "8775406961:AAGp_vMBIrHrhRdOdAouO2zKtLyuUtvxVYs"
+TELEGRAM_BOT_TOKEN = os.getenv(
+    'TELEGRAM_BOT_TOKEN'
+)
 
-CHAT_ID = "7274328723"
+TELEGRAM_CHAT_ID = os.getenv(
+    'TELEGRAM_CHAT_ID'
+)
 
 
 # =========================================
 # NEWS API
 # =========================================
 
-NEWS_API_KEY = "pub_f19e3a5d0d8c4ec89d59caddad37df68"
+NEWS_API_KEY = os.getenv(
+    'NEWS_API_KEY'
+)
 
 
 # =========================================
