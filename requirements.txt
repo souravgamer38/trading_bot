@@ -1,11 +1,11 @@
-ccxt==4.4.82
+ccxt
 
-pandas==2.2.2
+pandas
 
-ta==0.11.0
+ta
 
-requests==2.32.3
+requests
 
-python-dotenv==1.0.1
+python-dotenv
 
-numpy==1.26.4
+numpy
