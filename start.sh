@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 echo "================================="
-echo "🚀 TRADING BOT STARTUP"
+echo "🚀 TRADING BOT STARTING"
 echo "================================="
 
 # =================================
@@ -16,21 +16,22 @@ pkg update -y
 
 pkg install python -y
 pkg install git -y
+pkg install clang -y
+pkg install rust -y
+pkg install libffi -y
+pkg install openssl -y
 
 # =================================
-# UPGRADE PIP
+# UPGRADE PIP TO STABLE
 # =================================
 
-pip install --upgrade pip
+pip install --upgrade pip setuptools wheel
 
 # =================================
-# INSTALL PYTHON LIBRARIES
+# INSTALL REQUIREMENTS
 # =================================
 
-pip install ccxt
-pip install pandas
-pip install ta
-pip install requests
+pip install -r requirements.txt
 
 # =================================
 # AUTO RESTART LOOP
