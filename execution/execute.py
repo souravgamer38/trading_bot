@@ -1,5 +1,7 @@
 import time
 
+from analytics.logger import log_info
+
 from config import (
     TRADING_MODE
 )
@@ -28,9 +30,7 @@ def paper_trade(
     tp
 ):
 
-    print(
-        'PAPER TRADE EXECUTED'
-    )
+    log_info("PAPER TRADE")
 
     return {
 

@@ -1,6 +1,8 @@
 import time
 import threading
 import pandas as pd
+import signal
+import sys
 
 from ta.trend import EMAIndicator
 from ta.volatility import AverageTrueRange
@@ -179,7 +181,9 @@ from telegram.telegram_bot import (
 
     send_telegram,
 
-    send_startup
+    send_startup,
+    
+    send_shutdown
 )
 
 
@@ -327,9 +331,10 @@ def trading_loop():
 
         try:
 
-            print(
-                f'RUNNING {TRADING_MODE} MODE'
-            )
+            if DEBUG_MODE:
+                print(
+        f'RUNNING {TRADING_MODE} MODE'
+    )
 
             # =========================================
             # ACTIVE TRADE CHECK
@@ -337,9 +342,10 @@ def trading_loop():
 
             if has_active_trade():
 
-                print(
-                    'ACTIVE TRADE EXISTS'
-                )
+                if DEBUG_MODE:
+                        print(
+        'ACTIVE TRADE EXISTS'
+    )
 
                 time.sleep(15)
 

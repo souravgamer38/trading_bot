@@ -113,17 +113,20 @@ https://financialmodelingprep.com/api/v3/economic_calendar
 
         for event in events:
 
+            if not isinstance(event, dict):
+                continue
+
             event_name = (
                 event.get(
                     'event',
-                    ''
+                    ""
                 )
             )
 
             event_time = (
                 event.get(
                     'date',
-                    ''
+                    ""
                 )
             )
 

@@ -1,5 +1,7 @@
 from datetime import datetime
 
+from analytics.logger import log_info
+
 from config import (
 
     ENABLE_LONDON_SESSION,
@@ -35,9 +37,7 @@ def smart_session():
             0 <= utc_hour <= 7
         ):
 
-            print(
-                'ASIAN SESSION'
-            )
+            log_info("ASIAN SESSION")
 
             return True
 
@@ -54,9 +54,7 @@ def smart_session():
             7 <= utc_hour <= 13
         ):
 
-            print(
-                'LONDON SESSION'
-            )
+            log_info("LONDON SESSION'")
 
             return True
 
@@ -73,9 +71,7 @@ def smart_session():
             13 <= utc_hour <= 22
         ):
 
-            print(
-                'NEW YORK SESSION'
-            )
+            log_info("NEW YORK SESSION")
 
             return True
 

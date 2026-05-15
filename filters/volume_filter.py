@@ -1,3 +1,4 @@
+from analytics.logger import log_info
 from config import (
     MIN_VOLUME_RATIO
 )
@@ -39,9 +40,7 @@ def volume_ok(
             average_volume
         )
 
-        print(
-            f'VOLUME RATIO: {volume_ratio}'
-        )
+        log_info(f"VOLUME RATIO: {volume_ratio}")
 
         return (
             volume_ratio

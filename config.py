@@ -56,6 +56,13 @@ TELEGRAM_CHAT_ID = os.getenv(
 NEWS_API_KEY = os.getenv(
     'NEWS_API_KEY'
 )
+HIGH_IMPACT_HOURS = [
+    "18:00",
+    "18:30",
+    "20:00",
+    "23:30",
+    "00:30"
+]
 
 
 # =========================================
@@ -243,13 +250,14 @@ PERIODIC_REPORT_FILE = (
 # LOG FILES
 # =========================================
 
-ERROR_LOG_FILE = (
-    'logs/errors.txt'
-)
 
-TRADE_LOG_FILE = (
-    'logs/trades.txt'
-)
+TRADE_LOG_FILE = 'logs/trades.log'
+
+ERROR_LOG_FILE = 'logs/errors.log'
+
+INFO_LOG_FILE = 'logs/info.log'
+
+PERFORMANCE_LOG_FILE = 'logs/performance.log'
 
 
 # =========================================
@@ -311,7 +319,7 @@ USE_NEWS_API = True
 # DEBUG
 # =========================================
 
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 
 # =========================================

@@ -3,6 +3,8 @@ from datetime import datetime
 from config import (
     TRADE_LOG_FILE,
     ERROR_LOG_FILE,
+    INFO_LOG_FILE,
+    PERFORMANCE_LOG_FILE,
     DEBUG_MODE
 )
 
@@ -170,11 +172,14 @@ INFO:
 
 '''
 
+        write_file(
+            INFO_LOG_FILE,
+            message
+        )
+
         if DEBUG_MODE:
 
-            print(
-                message
-            )
+            print(message)
 
     except Exception as e:
 
@@ -245,7 +250,7 @@ TIME:
 
         write_file(
 
-            TRADE_LOG_FILE,
+            PERFORMANCE_LOG_FILE,
 
             message
         )
@@ -258,4 +263,4 @@ TIME:
 
     except Exception as e:
 
-        log_error(str(e))
+        log_error(STR (e))
