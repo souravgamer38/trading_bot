@@ -6,7 +6,9 @@ from config import (
 
     TELEGRAM_BOT_TOKEN,
 
-    TELEGRAM_CHAT_ID
+    TELEGRAM_CHAT_ID,
+    
+    DEBUG_MODE
 )
 
 
@@ -48,10 +50,12 @@ def send_telegram(
         # =========================================
         # DEBUG
         # =========================================
+        
+        if DEBUG_MODE:
 
-        print(
-            'TELEGRAM MESSAGE SENT'
-        )
+            print(
+                'TELEGRAM MESSAGE SENT'
+            )
 
         return response.json()
 
@@ -114,10 +118,12 @@ https://api.telegram.org/bot
                     'photo': photo
                 }
             )
+        
+        if DEBUG_MODE:
 
-        print(
-            'PHOTO SENT'
-        )
+            print(
+                'PHOTO SENT'
+            )
 
         return response.json()
 

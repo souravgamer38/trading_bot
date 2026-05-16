@@ -144,8 +144,9 @@ ERROR:
             message
         )
 
-        print(
-            f'ERROR: {error_message}'
+        if DEBUG_MODE:
+            print(
+                f'ERROR: {error_message}'
         )
 
     except Exception as e:

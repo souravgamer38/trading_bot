@@ -9,6 +9,10 @@ from ta.volatility import AverageTrueRange
 
 from config import *
 
+from analytics.logger import (
+    current_time
+)
+
 from utils.api_manager import (
     create_exchange
 )
@@ -962,3 +966,61 @@ main_thread = threading.Thread(
 )
 
 main_thread.start()
+
+
+startup_message = f'''
+╔════════════════════════════╗
+      🚀 FVG TRADING BOT 🚀
+╚════════════════════════════╝
+
+🟢 STATUS        : RUNNING SUCCESSFULLY
+📅 DATE         : {current_time()}
+📊 MODE         : {TRADING_MODE}
+🧠 STRATEGY     : FVG + SMART MONEY
+🛡️ SYSTEM STATUS : ALL MODULES ACTIVE
+🔔 TELEGRAM     : CONNECTED
+🔒 PROTECTION   : ENABLED
+
+⚡ Bot is now monitoring market...
+💰 Waiting for high probability setup
+
+════════════════════════════
+'''
+
+startup_message_2 = f'''
+╔══════════════════════╗
+      🚀 FVG TRADING BOT 🚀
+╚══════════════════════╝
+
+🟢 STATUS                : 
+RUNNING SUCCESSFULLY
+
+📅 DATE                     : 
+{current_time()}
+
+📊 MODE                    : 
+{TRADING_MODE}
+
+🧠 STRATEGY            : 
+FVG + SMART MONEY
+
+🛡️ SYSTEM STATUS : 
+ALL MODULES ACTIVE
+
+🔔 TELEGRAM           : 
+CONNECTED
+
+🔒 PROTECTION       : 
+ENABLED
+
+⚡ Bot is now monitoring market...
+💰 Waiting for high probability setup
+
+════════════════════════
+'''
+
+print(startup_message)
+
+log_info(startup_message)
+
+send_telegram(startup_message_2)
